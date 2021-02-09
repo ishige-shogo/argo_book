@@ -12,4 +12,3 @@ way = 0
 end
 
 puts way
-git a
