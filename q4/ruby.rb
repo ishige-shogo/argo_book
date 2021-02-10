@@ -27,7 +27,7 @@ def check(number)
 end
 
 #あらかじめ0~59の点灯本数データを配列として持っておく
-lights = Array.new(60)
+lights = Array.new()
 60.times do |i|
     lights[i] = check(i)
 end
@@ -48,3 +48,9 @@ puts way
 3.times do |n|
     puts n
 end
+
+m = Array.new()
+3.times do |i|
+    m[i] = i        
+end
+puts m
