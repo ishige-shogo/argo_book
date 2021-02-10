@@ -25,10 +25,29 @@ def roman(number)
     result
 end
 
-way = Hash.new(0)
+way = Hash.new{0}
 1.upto(3999){|n|
     way[roman(n).size] += 1
 }
 
 puts way[12]
 
+m, n = 10.divmod(3)
+
+puts m # => 3
+puts n # => 1
+
+puts 10.divmod(3)
+
+sports = ["サッカー", "野球", "バスケ"]
+
+a, b, c = sports
+
+puts a
+puts b
+puts c
+
+d, e = sports
+
+puts d
+puts e
