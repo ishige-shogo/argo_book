@@ -1,5 +1,4 @@
 N = 45
-
 #パスカルの配列作成
 pascal = [0] * (N + 1)
 pascal[0] = 1
@@ -9,7 +8,7 @@ N.times do |n|
         pascal[i] += pascal[i - 1]
     end
 end
-
+#お金の枚数を計算するメソッド
 def count(number)
     money = [10000, 5000, 2000, 1000, 500, 100, 50, 10, 5, 1]
     coins = 0
