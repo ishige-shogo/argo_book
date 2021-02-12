@@ -4,7 +4,7 @@
 # [1,3,4,5]   => 1・3~5
 # [1,2,4,5]   => 1・2・4・5
 
-N = [1,2,4,5,6,8,9,10,13,14,15,17,18]
+N = [1,2,3,5,6,7]
 
 def label(numbers)
     i = 0
@@ -40,19 +40,10 @@ puts label(N)
 #別解
 
 def level_label(ary)
-    ary
-      .chunk_while { |a, b| a + 1 == b }
-      .map { |a|
-        case a.size
-        when 1 then a[0]
-        when 2 then "#{a[0]}・#{a[1]}"
-        else "#{a[0]}~#{a[-1]}"
-        end
-      }
-      .join("・")
-  end
+    ary.chunk_while { |a, b| a + 1 == b }.map { |a| case a.size when 1 then a[0] when 2 then "#{a[0]}・#{a[1]}" else "#{a[0]}~#{a[-1]}" end}.join("・")
+end
 
-puts level_label([1,2,4,5,9,6])
+puts level_label([1,2,3,4,6,7,9,10,11])
 
 
 N = [] 
@@ -71,3 +62,10 @@ def level_label(numbers_array)
 end
 
 puts level_label(N)
+
+b=[1,2,3,5,6,7]
+p b.chunk_while { |a, b| a+1 == b }.to_a
+
+a = [0, 9, 2, 2, 3, 2, 7, 5, 9, 5]
+p a.chunk_while {|i, j| i <= j }.to_a
+# => [[0, 9], [2, 2, 3], [2, 7], [5, 9], [5]]
