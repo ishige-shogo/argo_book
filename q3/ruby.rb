@@ -32,6 +32,9 @@ way = Hash.new{0}
 
 puts way[12]
 
+
+
+
 m, n = 10.divmod(3)
 
 puts m # => 3
