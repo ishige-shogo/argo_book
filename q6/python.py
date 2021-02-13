@@ -26,3 +26,29 @@ def square(n, m):
 
 print(square(20, 1000))
 
+#別解 Rubyより遅い
+
+W, N = 1000, 20
+
+def cut(w, h, n):
+    if w == h:
+        return (n==0)
+    if w > h:
+        w, h = h, w
+    q, r = divmod(h, w)
+    if (n-q < 0) or (r == 0):
+        return (n-q == 0)
+    else:
+        return cut(w, r, n - q)
+
+cnt = 0
+i = 1
+while i <= W:
+    s = i
+    while s <= W:
+        if cut(i, s, N):
+            cnt += 1
+        s += 1
+    i += 1
+
+print(cnt)
