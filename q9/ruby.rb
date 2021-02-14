@@ -4,16 +4,27 @@
 def cool(n)
     m = n.to_s(8).split(//)
     k = m.map{|i| i.to_i ** m.size}
-    o = k.map{|s| s.to_s(8).to_i}
-    return o.sum == n.to_s(8).to_i
+    return k.sum.to_s(8) == n.to_s(8)
 end
 
+number = 8
 cool_numbers = []
-8.upto(10000) do |i|
-    if cool(i)
-        cool_numbers.append(i.to_s(8))
-    end
+while cool_numbers.size < 8
+    cool_numbers.append(number.to_s(8)) if cool(number)
+    number += 1
 end
+
+puts cool_numbers
+
+
+
+puts [1,2,3,4].sum
+
+puts 17.to_s(3).split(//)
+
+m = [1,2,2]
+k = m.map{|i| (i.to_i ** m.size).to_s(3).to_i}
+puts k.sum
 
 puts cool_numbers
 
