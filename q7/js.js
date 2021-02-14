@@ -8,11 +8,9 @@ function nPr(n, r){
     return result;
 };
 
-console.log(nPr(5, 3))
-
 var way = 0;
 
-for(var s = 0; s >= (N-1); s++){
+for(var s = 0; s <= (N-1); s++){
     way += (N - s) * nPr(N, s - 1) * s;
 };
 
