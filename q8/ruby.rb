@@ -5,3 +5,4 @@ def cell(h, w)
 end
 
 puts cell(10, 10)
+
