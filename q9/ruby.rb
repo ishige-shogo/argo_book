@@ -53,3 +53,4 @@ while count < 8 do
 end
 
 puts cool_numbers
+
