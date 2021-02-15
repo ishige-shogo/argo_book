@@ -1,5 +1,5 @@
 #アダムズ方式議席問題
-import math
+
 # import sys
 
 # sys.setrecursionlimit(10000000)
@@ -55,6 +55,60 @@ N = 289
 left, right = 1, max(town)
 
 while left < right:
+    middle = (left + right) / 2
+    seat = []
+    for i in town:
+        seat.append(math.ceil(i/middle))
+    seat_sum = sum(seat)
+    if seat_sum == N:
+        print(seat)
+        break
+    elif N > seat_sum:
+        right = middle
+    else:
+        left = middle + 1
+
+
+#------------------------------------------------------------
+#0から試行
+first, last = 0, 30000000
+answer = 20210215
+
+number = 0
+count = 0
+while number <= last:
+    if answer == number:
+        count += 1
+        print(count)
+        break
+    number += 1
+    count += 1
+
+#-------------------------------------------------
+#二分探索で試行
+import math
+first, last = 0, 30000000
+answer = 20210215
+
+count = 0
+while first < last:
+    average = math.ceil((first + last) / 2)
+    if answer == average:
+        count += 1
+        print(count)
+        break
+    elif answer > average:
+        first = average
+        count += 1
+    else:
+        last = average
+        count += 1
+
+#------------------------------------------------
+
+
+print((0+5)/2)
+
     middle = (left + right) / 2
     seat = []
     for i in town:
