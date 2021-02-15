@@ -71,38 +71,35 @@ while left < right:
 
 #------------------------------------------------------------
 #0から試行
-first, last = 0, 30000000
+left, right = 0, 50000000
 answer = 20210215
 
 number = 0
 count = 0
-while number <= last:
+while number <= right:
+    count += 1
     if answer == number:
-        count += 1
         print(count)
         break
     number += 1
-    count += 1
 
 #-------------------------------------------------
 #二分探索で試行
 import math
-first, last = 0, 30000000
+left, right = 0, 50000000
 answer = 20210215
 
 count = 0
-while first < last:
-    average = math.ceil((first + last) / 2)
+while left < right:
+    count += 1
+    average = math.ceil((left + right) / 2)
     if answer == average:
-        count += 1
         print(count)
         break
     elif answer > average:
-        first = average
-        count += 1
+        left = average
     else:
-        last = average
-        count += 1
+        right = average
 
 #------------------------------------------------
 
