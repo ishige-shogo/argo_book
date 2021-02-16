@@ -1,7 +1,7 @@
 #アダムズ方式議席問題
 
 # import sys
-
+import math
 # sys.setrecursionlimit(10000000)
 #numberを切り上げ
 #math.ceil(number)
@@ -85,9 +85,9 @@ while number <= right:
 
 #-------------------------------------------------
 #二分探索で試行
-import math
+
 left, right = 0, 100
-answer = 99
+answer = 0
 
 count = 0
 while left < right:
@@ -105,7 +105,7 @@ while left < right:
 
 
 print((0+5)/2)
-
+while left < right:
     middle = (left + right) / 2
     seat = []
     for i in town:
