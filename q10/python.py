@@ -86,8 +86,8 @@ while number <= right:
 #-------------------------------------------------
 #二分探索で試行
 import math
-left, right = 0, 50000000
-answer = 20210215
+left, right = 0, 100
+answer = 99
 
 count = 0
 while left < right:
